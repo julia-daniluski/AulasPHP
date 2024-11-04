@@ -15,16 +15,10 @@
         <input type="text" name="idade" placeholder="Digite sua idade" required>
         <p>Ingresso:</p>
         <input type="text" placeholder="Tipo de ingresso" list="tipo">
-  <datalist id="ingresso">
-    <option value="">tipo de ingresso:</option>
-    <option value="VIP">Ingresso VIP</option>
-    <option value="Regular">Ingresso regular</option>
-    <option value="Basico">Ingresso básico</option>
-  </datalist>
         <button type="submit">Enviar</button>
     </form>
 
-    <?php
+<?php
 $ingresso = "POST"; 
 switch ($ingresso) {
     case 1:
