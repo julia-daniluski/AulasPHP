@@ -7,39 +7,58 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Formulário para compra</h1>
-    <p>Nome:</p>
+    <h1>Formulário para Compra</h1>
     <form method="POST">
-        <input type="text" name="nome" placeholder="Digite seu nome" required>
-    <p>Idade:</p>
-        <input type="text" name="idade" placeholder="Digite sua idade" required>
-        <p>Ingresso:</p>
-        <input type="text" placeholder="Tipo de ingresso" list="tipo">
+        <div>
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required>
+        </div>
+        
+        <div>
+            <label for="idade">Idade:</label>
+            <input type="number" name="idade" id="idade" placeholder="Digite sua idade" required>
+        </div>
+        
+        <div class="dropdown">
+            <label>Escolha seu Ingresso:</label>
+            <button type="button" class="dropdownbtn" required>Selecionar</button>
+            <div class="dropdown-content">
+                <a href="#" data-value="VIP">VIP</a>
+                <a href="#" data-value="Regular">Regular</a>
+                <a href="#" data-value="Básico">Básico</a>
+            </div>
+        </div>
+
         <button type="submit">Enviar</button>
     </form>
 
-<?php
-$ingresso = "POST"; 
-switch ($ingresso) {
-    case 1:
-        $preco = 100,00;
-        $tipoingresso = "VIP";
-        break;
-    case 2:
-        $preco = 50,00;
-        $tipoingresso = "Regular";
-        break;
-    case 3:
-        $preco = 20,00;
-        $tipoingresso = "Básico";
-        break;
-    default:
-        echo "Opção inválida.";
-}
+    <?php
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $nome = htmlspecialchars($_POST['nome']);
+        $idade = (int)$_POST['idade']; 
+        
+        if ($idade < 18) { 
+            echo "<p>Desculpe, você precisa ter 18 anos ou mais para comprar um ingresso.</p>";
+        } else {
+            echo "<p>Obrigado, $nome! Sua compra foi realizada com sucesso.</p>";
+        }
+    }
+    ?>
+    
+    <script>
+        const dropdownBtn = document.querySelector('.dropdownbtn');
+        const dropdownContent = document.querySelector('.dropdown-content');
 
-echo "<p>Você escolheu: $tipoingresso</p>";
-echo "Preço : " . number_format($preco, 2,',');
+        dropdownBtn.onclick = function() {
+            dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+        };
 
-?>
+        // Fechar o dropdown se o usuário clicar fora
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropdownbtn')) {
+                dropdownContent.style.display = 'none';
+            }
+        };
+    </script>
 </body>
 </html>
