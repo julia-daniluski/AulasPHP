@@ -30,8 +30,8 @@
                 <button type="button" class="dropdownbtn">INGRESSO</button>
                 <div class="dropdown-content">
                     <a href="#" data-value="VIP" data-preco="200">VIP - R$200</a>
-                    <a href="#" data-value="Regular" data-preco="100">Regular - R$100</a>
-                    <a href="#" data-value="Básico" data-preco="50">Básico - R$50</a>
+                    <a href="#" data-value="Regular" data-preco="50">Regular - R$50</a>
+                    <a href="#" data-value="Básico" data-preco="20">Básico - R$20</a>
                 </div>
             </div>
             <input type="hidden" name="tipo_ingresso" id="tipo_ingresso">
