@@ -10,10 +10,17 @@
 
 body {
     padding: 20px;
+    background-image:url(https://www.billboard.com/wp-content/uploads/media/02-El-Chombo-Dame-Tu-Cosita-2018-billboard-1548.jpg);
+
+}
+
+header{
+    color: rgb(1, 71, 1);
 }
 
 h1 {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    font-weight: bold;
 }
 
 .dropdown {
@@ -24,11 +31,12 @@ h1 {
 .dropdownbtn {
     background-color: #810404b0;
     color: white;
-    padding: 10px;
+    padding: 8px;
     font-size: 8px; 
-    border-radius: 5px;
-    border: none;
+    border-radius: 9px;
+    border:none;
     cursor: pointer;
+    font-weight: bolder;
 }
 
 .dropdown-content {

@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ingresso Bruno Mars</title>
+    <title>Ingresso Dame Tu Cosita</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/favicon.jpg" type="image/x-icon">
 </head>
 <body>
-    <h1>Formulário para Compra</h1>
+    <header>
+<h1>INGRESSOS SHOW DAME TU COSITA</h1>
+</header>
     <form method="POST">
         <div>
             <label for="nome">Nome:</label>
@@ -21,7 +24,7 @@
         
         <div class="dropdown">
             <label>Escolha seu Ingresso:</label>
-            <button type="button" class="dropdownbtn" required>Selecionar</button>
+            <button type="button" class="dropdownbtn" required>INGRESSO</button>
             <div class="dropdown-content">
                 <a href="#" data-value="VIP">VIP</a>
                 <a href="#" data-value="Regular">Regular</a>
@@ -43,6 +46,7 @@
             echo "<p>Obrigado, $nome! Sua compra foi realizada com sucesso.</p>";
         }
     }
+
     ?>
     
     <script>
